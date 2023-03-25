@@ -131,5 +131,5 @@ dmypy.json
 .python-version
 .idea/
 postgresql/*
-static/*
+data/static/*
 media/*
