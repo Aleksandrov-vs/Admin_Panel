@@ -133,3 +133,4 @@ dmypy.json
 postgresql/*
 data/static/*
 media/*
+.DS_Store
