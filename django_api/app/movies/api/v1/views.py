@@ -12,7 +12,8 @@ class MoviesApiMixin:
     http_method_names = ['get']
 
     def get_queryset(self):
-        film_works_qs = Filmwork.objects.prefetch_related('persons', 'genres').values()
+        film_works_qs = Filmwork.objects.prefetch_related('persons', 'genres')\
+            .values()
         film_works_qs = film_works_qs.annotate(
             actors=ArrayAgg(
                 'personfilmwork__person__full_name',

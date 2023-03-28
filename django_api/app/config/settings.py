@@ -27,7 +27,8 @@ DEBUG = os.environ.get('DEBUG', False) == 'True'
 if DEBUG:
     import socket  # only if you haven't already imported this
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
-    INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "172.30.0.1"]
+    INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] +\
+                   ["127.0.0.1", "172.30.0.1"]
 
 print(INTERNAL_IPS)
 
