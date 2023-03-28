@@ -30,7 +30,6 @@ if DEBUG:
     INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] +\
                    ["127.0.0.1", "172.30.0.1"]
 
-print(INTERNAL_IPS)
 
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': lambda request: DEBUG,
@@ -39,7 +38,7 @@ DEBUG_TOOLBAR_CONFIG = {
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
 
 NGINX_PORT = os.getenv('NGINX_PORT')
-CSRF_TRUSTED_ORIGINS = [f"http://localhost:{NGINX_PORT}"]
+CSRF_TRUSTED_ORIGINS = [f"http://127.0.0.1:{NGINX_PORT}"]
 
 LOGGING = {
     'version': 1,
