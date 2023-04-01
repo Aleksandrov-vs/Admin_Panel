@@ -24,8 +24,8 @@ services:
       - ./postgresql/data:/var/lib/postgresql/data
     networks:
       - django_network
-    ports:
-      - ${POSTGRES_PORT}:5432
+    expose:
+      - ${POSTGRES_PORT}
 
   django_app:
     build:
